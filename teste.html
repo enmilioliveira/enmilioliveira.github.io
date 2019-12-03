@@ -22,8 +22,9 @@
       var bloco;
       AFRAME.registerComponent("bloco", {            
          init: function () {       
-            this.el.addEventListener("collisions", (e) => {        
-              console.log("colidiu")       
+            this.el.addEventListener("collisions", (e) => {   
+             colisao=colisao+1      
+              console.log("colisao:"+colisao  )     
               alert("Fim de Jogo !!!")          
               location.reload()      
             })     
@@ -50,7 +51,7 @@
         <a-asset-item id="ball" src="circulo.glb"></a-asset-item>
       </a-assets>
 
-      <a-entity gltf-model="#ball" position="-1.0 -3.0 -17.7" scale="7.5 5 7.5" static-body wasd-controls></a-entity>
+      <a-entity gltf-model="#ball" position="-1.0 -2.0 -12.7" scale="7.5 5 7.5" static-body wasd-controls></a-entity>
 
     
      
