@@ -27,7 +27,10 @@
               bloco.addEventListener("collisions", (e) => {   
               colisao=colisao+1      
               console.log("colisao" )     
-              alert("Fim de Jogo !!!")          
+              alert("Fim de Jogo !!!")
+              $(document).ready(function () {
+			window.onloadend = window.alert("Clique  !");
+		});    
               location.reload()      
             })     
          }
