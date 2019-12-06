@@ -38,7 +38,8 @@
         <a-asset-item id="ball" src="circulo.glb"></a-asset-item>
       </a-assets>
 
-      <a-entity gltf-model="#ball" position="0.0 -2.5 -11.0" scale="7.5 5 7.5" static-body wasd-controls></a-entity>
+      <a-entity gltf-model="#ball" position="0.0 -2.5 -11.0" scale="7.5 5 7.5"  certo id="certo"
+      static-body physics-collider="ignoreSleep:true"></a-entity>
 
         
       <a-cylinder position="2.5 -2.0 -13"  color="blue" width="2.0" height="6.0" depth="7" certo 
