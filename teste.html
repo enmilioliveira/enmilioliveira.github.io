@@ -4,7 +4,7 @@
 
   <head>
 
-     <meta charset="utf-8">
+     <meta charset="UTF-8">
 
     <title>CG - Trabalho Prático Final - Jogo</title>
 
@@ -22,7 +22,22 @@
          init: function () {       
             this.el.addEventListener("collisions", (e) => {        
               console.log("colidiu")       
-              alert("Fim de Jogo !!!")          
+
+              alert("Game Over !!!")
+                    var r = Math.floor((Math.random() * 10) + 1);
+                    if(r == 1 || r == 5){
+                        alert("Tente novamente!")
+                    } else if(r == 2 || r == 6){
+                        alert("Não desista agora!")
+                    } else if(r == 3 || r == 7){
+                        alert("Tenha determinação!")
+                    } else if(r == 4 || r == 8){
+                        alert("...")
+                    } else if(r == 5 || r == 10){
+                        alert("... Você está tentando?")
+                    }
+
+              
               location.reload()      
             })     
          }
@@ -44,7 +59,7 @@
         <a-asset-item id="ball" src="circulo.glb"></a-asset-item>
       </a-assets>
 
-      <a-entity gltf-model="#ball" position="-1.0 -1.0 -5.9" scale="7.5 5 7.5" static-body wasd-controls="acceleration: 70"></a-entity>
+      <a-entity gltf-model="#ball" position="-1.0 -1.0 -5.9" scale="7.5 5 7.5" static-body wasd-controls="acceleration: 100"></a-entity>
 
       
       <a-box  position="2.5 -2.0 -13" color="#4682B4" width="6.0" height="3.0" depth="4.5"   bloco id="bloco"
@@ -66,7 +81,7 @@
       <a-box src="space1.png" position="14.5 -8.8 -27.7" rotation="-100 0.0 0" scale="1.0 15.42 1.0" width="9.5" height="57.5" depth="3000" bloco id="bloco"
       static-body physics-collider="ignoreSleep: true" ></a-box>
 
-      <a-plane position="0 -4 -10" rotation="-100 0 0" width="22" height="2000" color="#008080"></a-plane>  
+      <a-plane position="0 -4 -10" rotation="-100 0 0" width="22" height="2019" color="#008080"></a-plane>  
       
     </a-scene>
 
