@@ -1,1 +1,66 @@
+<!DOCTYPE html>
 
+<html>
+
+  <head>
+
+     <meta charset="UTF-8">
+
+    <title>CG - Trabalho Prático Final - Jogo</title>
+
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+
+    <script  src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.1.2/dist/aframe-physics-system.min.js"></script>  
+
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+
+    <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
+
+    <script>
+      var bloco;
+      AFRAME.registerComponent("bloco", {            
+         init: function () {       
+            this.el.addEventListener("collisions", (e) => {        
+              console.log("colidiu")       
+              alert("Game Over !!!")
+               
+              
+              location.reload()      
+            })     
+         }
+    });
+    </script>
+
+  </head>
+
+  <body bgcolor="black">
+
+    <a-scene >
+
+       <a-box position="0 -7.5 -123" rotation="0 0 0" width="13" height="6.5" depth="0.1" color="#20B2AA"></a-box>
+
+      <a-cylinder position=" 8.0 -20.5 -124" rotation="0 45 0" radius="2" height="27" depth="0.2" color="black"></a-cylinder>
+      <a-cylinder position="-8.0 -20.5 -124" rotation="0 45 0" radius="2" height="27" depth="0.2" color="black"></a-cylinder>
+
+      <a-assets>
+        <a-asset-item id="ball" src="circulo.glb"></a-asset-item>
+      </a-assets>
+
+      <a-entity gltf-model="#ball" position="-1.0 -1.0 -5.9" scale="7.5 5 7.5" static-body wasd-controls="acceleration: 75"></a-entity>
+
+      
+
+     
+      <a-box src="space1.png"  position="-14.5  -8.8  -27.7" rotation="-100 0.0 0" scale="1.0 15.42 1.0" width="9.5" height="57.5" depth="3000" 
+       bloco id="bloco" static-body physics-collider="ignoreSleep: true"></a-box>
+      
+      <a-box src="space1.png" position="14.5 -8.8 -27.7" rotation="-100 0.0 0" scale="1.0 15.42 1.0" width="9.5" height="57.5" depth="3000" bloco id="bloco"
+      static-body physics-collider="ignoreSleep: true" ></a-box>
+
+      <a-plane position="0 -4 -10" rotation="-100 0 0" width="22" height="2019" color="#008080"></a-plane>  
+      
+    </a-scene>
+
+  </body>
+
+</html>
